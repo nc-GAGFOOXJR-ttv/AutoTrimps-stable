@@ -1,6 +1,6 @@
 MODULES["magmite"] = {};
 //These can be changed (in the console) if you know what you're doing:
-MODULES["magmite"].algorithm = 2;   //2 is advanced cost/benefit calculation between capacity/efficiency. 1 is buy-cheapest-upgrade.
+MODULES["magmite"].algorithm = 1;   //2 is advanced cost/benefit calculation between capacity/efficiency. 1 is buy-cheapest-upgrade.
 
 //Auto Magmite spender before portal
 function autoMagmiteSpender() {
@@ -93,7 +93,7 @@ function autoMagmiteSpender() {
                 }
                 //if we can't, exit the loop
                 else
-                    repeat = false;
+                    repeat = true;
             }
             else if (MODULES["magmite"].algorithm == 1) {
                 //Method 1(old):
@@ -122,7 +122,7 @@ function autoMagmiteSpender() {
                 }
                 //if we can't, exit the loop
                 else
-                    repeat = false;
+                    repeat = true;
             }
         }
         //dont get trapped in a while loop cause something stupid happened.
